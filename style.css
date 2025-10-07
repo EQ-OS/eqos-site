@@ -1,0 +1,62 @@
+body{font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden}
+.app-mockup:hover{transform:translate(-50%,-50%) translateY(-20px) rotateY(10deg);box-shadow:0 70px 140px rgba(102,126,234,.4)}
+.mockup-screen{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:6rem;position:relative}
+.wali-mockup .mockup-screen{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)}
+.wandi-mockup .mockup-screen{background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%)}
+.makiti-mockup .mockup-screen{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)}
+.app-info h3{font-size:3.5rem;margin-bottom:1rem;font-weight:900}
+.app-slogan{font-size:1.5rem;font-style:italic;color:rgba(255,255,255,.8);margin-bottom:2rem;padding-left:2rem;border-left:4px solid #667eea}
+.app-vision-badge{display:inline-block;padding:.8rem 2rem;background:rgba(102,126,234,.2);border-radius:50px;font-size:.95rem;margin-bottom:2rem;border:1px solid rgba(102,126,234,.4)}
+.app-description{font-size:1.2rem;line-height:1.8;color:rgba(255,255,255,.7);margin-bottom:2.5rem}
+.app-features{list-style:none}
+.app-features li{padding:1rem 0;padding-left:3rem;position:relative;font-size:1.1rem;color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.05)}
+.app-features li::before{content:'✓';position:absolute;left:0;width:35px;height:35px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:1.2rem}
+.market-grid{max-width:1400px;margin:4rem auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:3rem}
+.market-card{padding:3rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:30px;backdrop-filter:blur(20px);position:relative;overflow:hidden;transition:all .4s ease}
+.market-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(102,126,234,.1) 0%,transparent 70%);opacity:0;transition:all .6s ease}
+.market-card:hover::before{opacity:1;transform:scale(1.5)}
+.market-card:hover{transform:translateY(-15px);border-color:rgba(102,126,234,.5);box-shadow:0 30px 80px rgba(102,126,234,.3)}
+.market-icon{font-size:3.5rem;margin-bottom:1.5rem;position:relative;z-index:1}
+.market-card h3{font-size:2rem;margin-bottom:2rem;position:relative;z-index:1}
+.market-card ul{list-style:none;position:relative;z-index:1}
+.market-card li{padding:.8rem 0;padding-left:2rem;position:relative;color:rgba(255,255,255,.7);font-size:1.1rem}
+.market-card li::before{content:'→';position:absolute;left:0;color:#667eea;font-weight:bold;font-size:1.3rem}
+.team-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:3rem}
+.team-card{text-align:center;padding:2.5rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:25px;transition:all .4s ease}
+.team-card:hover{transform:translateY(-15px);background:rgba(255,255,255,.05);border-color:rgba(102,126,234,.5);box-shadow:0 30px 80px rgba(102,126,234,.3)}
+.team-avatar{width:150px;height:150px;margin:0 auto 1.5rem;border-radius:50%;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);display:flex;align-items:center;justify-content:center;font-size:4rem}
+.team-card h4{font-size:1.5rem;margin-bottom:.5rem}
+.team-card .role{color:#667eea;font-size:1.1rem;margin-bottom:1rem}
+.team-card p{color:rgba(255,255,255,.6);line-height:1.6}
+.contact-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+.contact-item{padding:2rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:20px;transition:all .3s ease}
+.contact-item:hover{background:rgba(255,255,255,.05);border-color:rgba(102,126,234,.5);transform:translateX(10px)}
+.contact-item-icon{font-size:2.5rem;margin-bottom:1rem}
+.contact-item h4{font-size:1.3rem;margin-bottom:.5rem}
+.contact-item p{color:rgba(255,255,255,.7);font-size:1.1rem}
+.contact-form{display:flex;flex-direction:column;gap:1.5rem}
+.form-group{display:flex;flex-direction:column;gap:.5rem}
+.form-group label{font-size:1rem;color:rgba(255,255,255,.8)}
+.form-group input,.form-group textarea{padding:1rem 1.5rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:15px;color:white;font-size:1rem;transition:all .3s ease}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:#667eea;background:rgba(255,255,255,.08)}
+.form-group textarea{min-height:150px;resize:vertical}
+.cta-section{padding:8rem 5%;text-align:center;position:relative;background:linear-gradient(135deg,#667eea 0%,#764ba2 50%,#f093fb 100%);overflow:hidden}
+.cta-content{position:relative;z-index:1;max-width:900px;margin:0 auto}
+.cta-section h2{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;margin-bottom:1.5rem}
+.cta-section p{font-size:1.4rem;margin-bottom:3rem;opacity:.9}
+.app-buttons{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
+.app-button{padding:1.5rem 3rem;background:rgba(255,255,255,.15);backdrop-filter:blur(20px);border:2px solid rgba(255,255,255,.3);border-radius:20px;color:white;font-size:1.1rem;font-weight:600;cursor:pointer;transition:all .3s ease;text-decoration:none;display:inline-block}
+.app-button:hover{background:white;color:#667eea;transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+footer{background:#000;padding:4rem 5%;border-top:1px solid rgba(255,255,255,.1)}
+.footer-content{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem}
+.footer-brand h4{font-size:2rem;margin-bottom:1rem;background:linear-gradient(135deg,#667eea 0%,#f093fb 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.footer-brand p{color:rgba(255,255,255,.6);line-height:1.6}
+.footer-links h5{margin-bottom:1.5rem;font-size:1.2rem}
+.footer-links ul{list-style:none}
+.footer-links li{margin-bottom:.8rem}
+.footer-links a{color:rgba(255,255,255,.6);text-decoration:none;transition:all .3s ease}
+.footer-links a:hover{color:#667eea;padding-left:5px}
+.footer-bottom{max-width:1400px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);text-align:center;color:rgba(255,255,255,.4)}
+@media(max-width:1024px){.app-detail,.about-content,.contact-content{grid-template-columns:1fr;gap:3rem}.footer-content{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links{position:fixed;top:80px;left:-100%;width:100%;height:calc(100vh - 80px);background:rgba(10,10,10,.98);flex-direction:column;justify-content:flex-start;padding:3rem;gap:2rem;transition:left .3s ease}.nav-links.active{left:0}.mobile-menu-btn{display:block}.stats-grid,.team-grid{grid-template-columns:1fr}.market-grid{grid-template-columns:1fr}.app-visual{height:400px}.app-mockup{width:280px;height:500px}.footer-content{grid-template-columns:1fr}.app-info h3{font-size:2.5rem}}
+html{scroll-behavior:smooth}
