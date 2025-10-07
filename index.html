@@ -1,68 +1,460 @@
-<!-- FILE: index.html -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EQOS - Révolution Digitale Africaine</title>
-<meta name="description" content="EQOS - Entreprise Qualifiée dans les Offres et Services. Wali, Wandi et Makiti : des solutions africaines pour l'emploi, le transport et l'agriculture.">
-<meta name="keywords" content="EQOS, Wali, Wandi, Makiti, Afrique, innovation, emploi, covoiturage, marketplace">
-<meta name="author" content="EQOS">
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<!-- Link CSS -->
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EQOS - Révolutionnons l'Afrique avec des solutions technologiques innovantes : Wali, Wandi et Makiti">
+    <meta name="keywords" content="EQOS, Afrique, technologie, innovation, Wali, Wandi, Makiti, startup africaine">
+    <meta name="author" content="EQOS">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="EQOS - Révolution Digitale Africaine">
+    <meta property="og:description" content="Transformons l'Afrique avec des solutions technologiques innovantes">
+    <meta property="og:image" content="https://eqos.africa/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <title>EQOS - Révolution Digitale Africaine</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav id="navbar">
-<div class="nav-content">
-<div class="logo" onclick="scrollToSection('accueil')">EQOS</div>
-<button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-<ul class="nav-links" id="navLinks">
-<li><a href="#accueil" onclick="closeMenu()">Accueil</a></li>
-<li><a href="#about" onclick="closeMenu()">Qui sommes-nous</a></li>
-<li><a href="#apps" onclick="closeMenu()">Applications</a></li>
-<li><a href="#marche" onclick="closeMenu()">Marché</a></li>
-<li><a href="#equipe" onclick="closeMenu()">Équipe</a></li>
-<li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-</ul>
-</div>
-</nav>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
 
+    <!-- Language Selector -->
+    <div class="language-selector" id="languageSelector">
+        <button class="lang-btn active" data-lang="fr">🇫🇷 FR</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        <button class="lang-btn" data-lang="ar">🇸🇦 AR</button>
+    </div>
 
-<section class="hero" id="accueil">
-<div class="hero-bg">
-<div class="gradient-orb orb1"></div>
-<div class="gradient-orb orb2"></div>
-<div class="gradient-orb orb3"></div>
-</div>
-<div class="hero-content">
-<h1><span class="gradient-text">EQOS</span></h1>
-<p class="hero-subtitle">Entreprise Qualifiée dans les Offres et Services</p>
-<p class="hero-description">Révolutionnons ensemble l'Afrique avec des solutions technologiques innovantes qui transforment l'emploi, le transport et l'agriculture</p>
-<div class="cta-group">
-<a href="#apps" class="btn btn-primary">Découvrir nos solutions</a>
-<a href="#contact" class="btn btn-secondary">Nous rejoindre</a>
-</div>
-</div>
-</section>
+    <!-- Navigation -->
+    <nav id="navbar" role="navigation" aria-label="Navigation principale">
+        <div class="nav-content">
+            <div class="logo" onclick="scrollToSection('accueil')" tabindex="0" role="button">
+                EQOS
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu de navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil" onclick="closeMenu()" data-translate="nav_home">Accueil</a></li>
+                <li><a href="#about" onclick="closeMenu()" data-translate="nav_about">Qui sommes-nous</a></li>
+                <li><a href="#apps" onclick="closeMenu()" data-translate="nav_apps">Applications</a></li>
+                <li><a href="#marche" onclick="closeMenu()" data-translate="nav_market">Marché</a></li>
+                <li><a href="#equipe" onclick="closeMenu()" data-translate="nav_team">Équipe</a></li>
+                <li><a href="#contact" onclick="closeMenu()" data-translate="nav_contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-bg">
+            <div class="gradient-orb orb1"></div>
+            <div class="gradient-orb orb2"></div>
+            <div class="gradient-orb orb3"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="fade-in-up">
+                <span class="gradient-text">EQOS</span>
+            </h1>
+            <p class="hero-subtitle fade-in-up" data-translate="hero_subtitle">
+                Entreprise Qualifiée dans les Offres et Services
+            </p>
+            <p class="hero-description fade-in-up" data-translate="hero_description">
+                Révolutionnons ensemble l'Afrique avec des solutions technologiques innovantes qui transforment l'emploi, le transport et l'agriculture
+            </p>
+            <div class="cta-group fade-in-up">
+                <a href="#apps" class="btn btn-primary" data-translate="hero_cta1">Découvrir nos solutions</a>
+                <a href="#contact" class="btn btn-secondary" data-translate="hero_cta2">Nous rejoindre</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
 
-<section class="stats-section">
-<div class="stats-grid">
-<div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Applications Innovantes</div></div>
-<div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Pays Ciblés</div></div>
-<div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Digital & Mobile</div></div>
-<div class="stat-card"><div class="stat-number">∞</div><div class="stat-label">Potentiel Africain</div></div>
-</div>
-</section>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card" data-aos="fade-up">
+                <div class="stat-number" data-count="3">0</div>
+                <div class="stat-label" data-translate="stat_apps">Applications Innovantes</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-number" data-count="3">0</div>
+                <div class="stat-label" data-translate="stat_countries">Pays Ciblés</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-number">100%</div>
+                <div class="stat-label" data-translate="stat_digital">Digital & Mobile</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-number">∞</div>
+                <div class="stat-label" data-translate="stat_potential">Potentiel Africain</div>
+            </div>
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2 class="section-title" data-aos="fade-up" data-translate="about_title">Qui Sommes-Nous ?</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-translate="about_subtitle">
+            EQOS est une entreprise innovante dédiée à la transformation digitale de l'Afrique
+        </p>
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right">
+                <h3 data-translate="about_mission_title">Notre Mission</h3>
+                <p data-translate="about_mission_p1">
+                    EQOS est née d'une vision simple mais ambitieuse : utiliser la technologie pour résoudre les défis quotidiens auxquels font face les communautés africaines. Nous croyons fermement que l'innovation digitale est la clé pour débloquer le potentiel immense de notre continent.
+                </p>
+                <p data-translate="about_mission_p2">
+                    À travers nos trois applications phares - Wali, Wandi et Makiti - nous créons un écosystème complet qui touche les aspects essentiels de la vie quotidienne : l'emploi, la mobilité et l'alimentation. Notre approche holistique permet de créer des synergies entre ces différents domaines pour maximiser l'impact positif sur nos utilisateurs.
+                </p>
+            </div>
+            <div class="about-values" data-aos="fade-left">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h4 data-translate="value_innovation_title">Innovation</h4>
+                    <p data-translate="value_innovation_desc">Nous développons des solutions technologiques adaptées aux réalités africaines</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h4 data-translate="value_impact_title">Impact Social</h4>
+                    <p data-translate="value_impact_desc">Chaque solution vise à améliorer concrètement la vie de nos utilisateurs</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h4 data-translate="value_sustainability_title">Durabilité</h4>
+                    <p data-translate="value_sustainability_desc">Nous promouvons une économie circulaire et respectueuse de l'environnement</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h4 data-translate="value_excellence_title">Excellence</h4>
+                    <p data-translate="value_excellence_desc">Nous visons la qualité et la fiabilité dans tous nos produits</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section" id="about">
-<h2 class="section-title">Qui Sommes-Nous ?</h2>
-<p class="section-subtitle">EQOS est une entreprise innovante dédiée à la transformation digitale de l'Afrique</p>
-<div class="about-content">
-<div class="about-text">
-<h3>Notre Mission</h3>
-<p>EQOS est née d'une vision simple mais ambitieuse : utiliser la technologie pour résoudre les défis quotidiens auxquels font face les communautés africaines. Nous croyons fermement que l'innovation digitale est la clé pour débloquer le potentiel immense de notre continent.</p>
-<p>À travers nos trois applications phares - Wali, Wandi et Makiti - nous créons un écosystème complet qui touche les aspects essentiels de la vie quotidienne : l'emploi, la mobilité et l'alimentation.</p>
+    <!-- Applications Section -->
+    <section class="section apps-section" id="apps">
+        <h2 class="section-title" data-aos="fade-up" data-translate="apps_title">Nos Applications</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-translate="apps_subtitle">
+            Trois solutions puissantes pour transformer l'Afrique
+        </p>
+        
+        <div class="apps-showcase">
+            <!-- Wali -->
+            <div class="app-detail" data-aos="fade-up">
+                <div class="app-visual">
+                    <div class="app-mockup wali-mockup">
+                        <div class="mockup-screen">
+                            <div class="mockup-content">
+                                <div class="app-icon">📱</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-info">
+                    <span class="app-badge">Services</span>
+                    <h3>Wali</h3>
+                    <p class="app-slogan" data-translate="wali_slogan">"Plongez-vous dans l'instant de liberté que vous méritez."</p>
+                    <div class="app-vision-badge" data-translate="wali_vision">
+                        🎯 Vision : Simplifier la vie quotidienne des Africains grâce à la technologie
+                    </div>
+                    <p class="app-description" data-translate="wali_description">
+                        Wali est une application dédiée à la mise en relation de prestataires de services et de clients via une application mobile. Elle propose une large gamme de services tels que la livraison de produits, le nettoyage à domicile, les cours particuliers et plus encore.
+                    </p>
+                    <ul class="app-features">
+                        <li data-translate="wali_feature1">Mise en relation instantanée avec des prestataires qualifiés</li>
+                        <li data-translate="wali_feature2">Large gamme de services disponibles 24/7</li>
+                        <li data-translate="wali_feature3">Système de notation et d'avis vérifiés</li>
+                        <li data-translate="wali_feature4">Paiement sécurisé et flexible</li>
+                        <li data-translate="wali_feature5">Suivi en temps réel de vos missions</li>
+                    </ul>
+                    <div class="app-cta">
+                        <a href="#contact" class="btn btn-primary" data-translate="download_wali">Télécharger Wali</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wandi -->
+            <div class="app-detail reverse" data-aos="fade-up">
+                <div class="app-visual">
+                    <div class="app-mockup wandi-mockup">
+                        <div class="mockup-screen">
+                            <div class="mockup-content">
+                                <div class="app-icon">🚗</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-info">
+                    <span class="app-badge">Transport</span>
+                    <h3>Wandi</h3>
+                    <p class="app-slogan" data-translate="wandi_slogan">"Voyagez ensemble, payez moins, connectez l'Afrique."</p>
+                    <div class="app-vision-badge" data-translate="wandi_vision">
+                        🌍 Vision : Offrir une solution de transport fiable, économique et respectueuse de l'environnement
+                    </div>
+                    <p class="app-description" data-translate="wandi_description">
+                        Wandi est l'application de covoiturage d'EQOS conçue pour faciliter les déplacements urbains et interurbains en Afrique. Elle permet aux conducteurs de proposer des trajets et aux passagers de réserver facilement une place, à moindre coût.
+                    </p>
+                    <ul class="app-features">
+                        <li data-translate="wandi_feature1">Trajets urbains et interurbains accessibles</li>
+                        <li data-translate="wandi_feature2">Réduction des coûts de transport jusqu'à 70%</li>
+                        <li data-translate="wandi_feature3">Impact environnemental positif</li>
+                        <li data-translate="wandi_feature4">Communauté de confiance vérifiée</li>
+                        <li data-translate="wandi_feature5">Réservation simple et rapide</li>
+                    </ul>
+                    <div class="app-cta">
+                        <a href="#contact" class="btn btn-primary" data-translate="download_wandi">Télécharger Wandi</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Makiti -->
+            <div class="app-detail" data-aos="fade-up">
+                <div class="app-visual">
+                    <div class="app-mockup makiti-mockup">
+                        <div class="mockup-screen">
+                            <div class="mockup-content">
+                                <div class="app-icon">🛒</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-info">
+                    <span class="app-badge">Agriculture</span>
+                    <h3>Makiti</h3>
+                    <p class="app-slogan" data-translate="makiti_slogan">"Du champ à l'assiette, sans détour."</p>
+                    <div class="app-vision-badge" data-translate="makiti_vision">
+                        🌾 Vision : Encourager une agriculture durable et une consommation responsable
+                    </div>
+                    <p class="app-description" data-translate="makiti_description">
+                        Makiti est la marketplace digitale d'EQOS dédiée à la vente en ligne de produits alimentaires issus de l'agriculture locale. Elle met en relation directe les producteurs et les consommateurs, sans intermédiaires.
+                    </p>
+                    <ul class="app-features">
+                        <li data-translate="makiti_feature1">Connexion directe producteurs-consommateurs</li>
+                        <li data-translate="makiti_feature2">Produits frais et locaux garantis</li>
+                        <li data-translate="makiti_feature3">Prix justes pour tous</li>
+                        <li data-translate="makiti_feature4">Soutien à l'économie rurale</li>
+                        <li data-translate="makiti_feature5">Livraison rapide et traçabilité complète</li>
+                    </ul>
+                    <div class="app-cta">
+                        <a href="#contact" class="btn btn-primary" data-translate="download_makiti">Télécharger Makiti</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Section -->
+    <section class="section" id="marche">
+        <h2 class="section-title" data-aos="fade-up" data-translate="market_title">Notre Marché</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-translate="market_subtitle">
+            Une stratégie de croissance ambitieuse pour l'Afrique
+        </p>
+        <div class="market-grid">
+            <div class="market-card" data-aos="fade-up">
+                <div class="market-icon">🌍</div>
+                <h3 data-translate="market_geo_title">Zone Géographique</h3>
+                <ul>
+                    <li data-translate="market_geo_1">Lancement initial : Guinée, Mali, Sénégal</li>
+                    <li data-translate="market_geo_2">Phase 2 : Expansion Afrique de l'Ouest</li>
+                    <li data-translate="market_geo_3">Phase 3 : Déploiement continental</li>
+                    <li data-translate="market_geo_4">Vision long terme : Toute l'Afrique</li>
+                </ul>
+            </div>
+            <div class="market-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="market-icon">👥</div>
+                <h3 data-translate="market_users_title">Utilisateurs Cibles</h3>
+                <ul>
+                    <li data-translate="market_users_1">Jeunes entrepreneurs et professionnels</li>
+                    <li data-translate="market_users_2">Familles urbaines et périurbaines</li>
+                    <li data-translate="market_users_3">Agriculteurs et producteurs locaux</li>
+                    <li data-translate="market_users_4">PME et commerces de proximité</li>
+                    <li data-translate="market_users_5">Restaurateurs et collectivités</li>
+                </ul>
+            </div>
+            <div class="market-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="market-icon">💰</div>
+                <h3 data-translate="market_model_title">Modèle Économique</h3>
+                <ul>
+                    <li data-translate="market_model_1">Commissions sur missions Wali</li>
+                    <li data-translate="market_model_2">Frais de trajets covoiturage Wandi</li>
+                    <li data-translate="market_model_3">Commissions sur ventes Makiti</li>
+                    <li data-translate="market_model_4">Publicité ciblée multi-plateformes</li>
+                    <li data-translate="market_model_5">Partenariats stratégiques B2B</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section" id="equipe">
+        <h2 class="section-title" data-aos="fade-up" data-translate="team_title">Notre Équipe</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-translate="team_subtitle">
+            Des experts passionnés par l'innovation africaine
+        </p>
+        <div class="team-grid">
+            <div class="team-card" data-aos="zoom-in">
+                <div class="team-avatar">👨‍💼</div>
+                <h4 data-translate="team_direction_title">Direction Générale</h4>
+                <p class="role" data-translate="team_direction_role">Leadership & Vision</p>
+                <p data-translate="team_direction_desc">Pilotage stratégique et développement de l'écosystème EQOS</p>
+            </div>
+            <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="team-avatar">💻</div>
+                <h4 data-translate="team_tech_title">Équipe Technique</h4>
+                <p class="role" data-translate="team_tech_role">Développement & Innovation</p>
+                <p data-translate="team_tech_desc">Conception et maintenance des plateformes digitales</p>
+            </div>
+            <div class="team-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="team-avatar">📊</div>
+                <h4 data-translate="team_marketing_title">Marketing & Business</h4>
+                <p class="role" data-translate="team_marketing_role">Croissance & Partenariats</p>
+                <p data-translate="team_marketing_desc">Développement commercial et stratégies d'acquisition</p>
+            </div>
+            <div class="team-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="team-avatar">🤝</div>
+                <h4 data-translate="team_support_title">Service Client</h4>
+                <p class="role" data-translate="team_support_role">Support & Satisfaction</p>
+                <p data-translate="team_support_desc">Accompagnement et support utilisateurs 24/7</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title" data-aos="fade-up" data-translate="contact_title">Contactez-Nous</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-translate="contact_subtitle">
+            Rejoignez l'aventure EQOS ou posez-nous vos questions
+        </p>
+        <div class="contact-content">
+            <div class="contact-info" data-aos="fade-right">
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <h4 data-translate="contact_address_title">Adresse</h4>
+                    <p>Conakry, Guinée<br>Dakar, Sénégal<br>Bamako, Mali</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📧</div>
+                    <h4>Email</h4>
+                    <p><a href="mailto:contact@eqos.africa">contact@eqos.africa</a><br><a href="mailto:support@eqos.africa">support@eqos.africa</a></p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📱</div>
+                    <h4 data-translate="contact_phone_title">Téléphone</h4>
+                    <p>+224 XXX XXX XXX<br>+221 XXX XXX XXX<br>+223 XXX XXX XXX</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">🌐</div>
+                    <h4 data-translate="contact_social_title">Réseaux Sociaux</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com/eqos" aria-label="Facebook">Facebook</a>
+                        <a href="https://twitter.com/eqos" aria-label="Twitter">Twitter</a>
+                        <a href="https://instagram.com/eqos" aria-label="Instagram">Instagram</a>
+                        <a href="https://linkedin.com/company/eqos" aria-label="LinkedIn">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form" data-aos="fade-left">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" data-translate="form_name">Nom complet</label>
+                        <input type="text" id="name" name="name" required placeholder="Votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" data-translate="form_subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" required placeholder="Objet de votre message">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-translate="form_message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Votre message..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-translate="form_submit">Envoyer le message</button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content" data-aos="zoom-in">
+            <h2 data-translate="cta_title">Rejoignez la Révolution EQOS</h2>
+            <p data-translate="cta_description">Téléchargez nos applications et transformez votre quotidien dès aujourd'hui</p>
+            <div class="app-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.eqos.wali" class="app-button">📱 <span data-translate="cta_wali">Télécharger Wali</span></a>
+                <a href="https://play.google.com/store/apps/details?id=com.eqos.wandi" class="app-button">🚗 <span data-translate="cta_wandi">Télécharger Wandi</span></a>
+                <a href="https://play.google.com/store/apps/details?id=com.eqos.makiti" class="app-button">🛒 <span data-translate="cta_makiti">Télécharger Makiti</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h4>EQOS</h4>
+                <p data-translate="footer_description">Entreprise Qualifiée dans les Offres et Services. Nous transformons l'Afrique grâce à l'innovation technologique et des solutions adaptées aux réalités locales.</p>
+            </div>
+            <div class="footer-links">
+                <h5 data-translate="footer_apps">Applications</h5>
+                <ul>
+                    <li><a href="#apps">Wali</a></li>
+                    <li><a href="#apps">Wandi</a></li>
+                    <li><a href="#apps">Makiti</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5 data-translate="footer_company">Entreprise</h5>
+                <ul>
+                    <li><a href="#about" data-translate="footer_about">À propos</a></li>
+                    <li><a href="#equipe" data-translate="footer_team">Équipe</a></li>
+                    <li><a href="#marche" data-translate="footer_market">Marché</a></li>
+                    <li><a href="#contact" data-translate="footer_contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5 data-translate="footer_legal">Légal</h5>
+                <ul>
+                    <li><a href="#" data-translate="footer_legal_mentions">Mentions légales</a></li>
+                    <li><a href="#" data-translate="footer_privacy">Confidentialité</a></li>
+                    <li><a href="#" data-translate="footer_terms">CGU</a></li>
+                    <li><a href="#" data-translate="footer_cookies">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EQOS - <span data-translate="footer_rights">Tous droits réservés</span>.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+        ↑
+    </button>
+
+    <script src="script.js"></script>
+</body>
 </html>
